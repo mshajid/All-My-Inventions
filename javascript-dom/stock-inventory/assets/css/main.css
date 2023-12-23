@@ -22,6 +22,10 @@
     @apply text-xs mt-2 p-2 bg-red-950 rounded
 }
 
+.form-label {
+    @apply text-xs mt-2 p-2 bg-emerald-600 rounded
+}
+
 .navBtn-child {
   @apply *:px-3 *:py-1 *:bg-[#092635]/40 *:rounded-md *:border *:border-[#092635] *:text-sm space-x-2;
 }
