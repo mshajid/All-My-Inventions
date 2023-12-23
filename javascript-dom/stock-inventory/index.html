@@ -15,14 +15,12 @@
   </head>
   <body class="bg-[#092635] font-jakarta">
     <main>
-      <div class="max-w-3xl mx-auto bg-[#1B4242] px-5 py-5 text-white mt-10 rounded-lg border border-[#9EC8B9] shadow-lg shadow-white/10 drop-shadow-lg">
+      <div class="main-container">
         <div class="flex justify-between items-center">
           <div class="*:text-3xl *:font-bold">
             <h2>Stock Inventory</h2>
           </div>
-          <div
-            class="*:px-3 *:py-1 *:bg-[#092635]/40 *:rounded-md *:border *:border-[#092635] *:text-sm space-x-2"
-          >
+          <div class="navBtn-child">
             <button class="hover:bg-[#092635]">Contributions</button>
             <button class="hover:bg-[#092635]">GitHub</button>
           </div>
@@ -31,39 +29,24 @@
         <form id="stockInventory" class="my-10">
           <div class="flex flex-col gap-y-5">
             <div class="flex gap-x-2">
-              <input
-                placeholder="Product ID"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
-              />
-              <input
-                placeholder="Product Name"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
-              />
+              <input placeholder="Product ID" class="form-input" />
+              <input placeholder="Product Name" class="form-input" />
             </div>
             <div class="flex gap-x-2">
               <input
                 type="number"
                 placeholder="Quantities"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+                class="form-input"
               />
-              <input
-                placeholder="Supervisor's name"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
-              />
+              <input placeholder="Supervisor's name" class="form-input" />
             </div>
             <div>
-              <input
-                placeholder="Date of Entry"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
-              />
+              <input placeholder="Date of Entry" class="form-input" />
             </div>
             <div>
-              <input
-                placeholder="Remarks"
-                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
-              />
+              <input placeholder="Remarks" class="form-input" />
             </div>
-            <div class="*:bg-[#5C8374]/40 *:border *:border-[#5C8374] *:px-3 *:py-1 *:rounded-md">
+            <div class="submit-child">
               <button class="hover:bg-[#5C8374]">Submit</button>
             </div>
           </div>

@@ -9,3 +9,20 @@
       margin: 0;
     }
 }
+
+.form-input{
+    @apply bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1
+}
+
+.submit-child{
+    @apply *:bg-[#5C8374]/40 *:border *:border-[#5C8374] *:px-3 *:py-1 *:rounded-md
+}
+
+
+.navBtn-child{
+    @apply *:px-3 *:py-1 *:bg-[#092635]/40 *:rounded-md *:border *:border-[#092635] *:text-sm space-x-2
+}
+
+.main-container{
+    @apply max-w-3xl mx-auto bg-[#1B4242] px-5 py-5 text-white mt-10 rounded-lg border border-[#9EC8B9] shadow-lg shadow-white/10 drop-shadow-lg
+}
