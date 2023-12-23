@@ -29,19 +29,44 @@
         <form id="stockInventory" class="my-10">
           <div class="flex flex-col gap-y-5">
             <div class="flex gap-x-2">
-              <input placeholder="Product ID" class="form-input" />
-              <input placeholder="Product Name" class="form-input" />
+              <div class="flex-1">
+                <input
+                  id="productId"
+                  placeholder="Product ID"
+                  class="form-input"
+                />
+              </div>
+              <div class="flex-1">
+                <input
+                  id="productName"
+                  placeholder="Product Name"
+                  class="form-input"
+                />
+              </div>
             </div>
             <div class="flex gap-x-2">
-              <input
-                type="number"
-                placeholder="Quantities"
-                class="form-input"
-              />
-              <input placeholder="Supervisor's name" class="form-input" />
+              <div class="flex-1">
+                <input
+                  id="quantities"
+                  type="number"
+                  placeholder="Quantities"
+                  class="form-input"
+                />
+              </div>
+              <div class="flex-1">
+                <input
+                  id="supervisor"
+                  placeholder="Supervisor's name"
+                  class="form-input"
+                />
+              </div>
             </div>
             <div>
-              <input placeholder="Date of Entry" class="form-input" />
+              <input
+                id="dateEntry"
+                placeholder="Date of Entry"
+                class="form-input"
+              />
             </div>
             <div>
               <input placeholder="Remarks" class="form-input" />
@@ -53,7 +78,7 @@
         </form>
       </div>
 
-      <div class="second-container">
+      <div class="second-container hidden">
         <div class="flex justify-center items-center mb-8">
           <div class="*:text-3xl *:font-bold">
             <h2 class="text-center">Stock Details of Cloudy Outlet</h2>
@@ -101,5 +126,6 @@
         </table>
       </div>
     </main>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
