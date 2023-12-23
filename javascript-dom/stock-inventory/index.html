@@ -1,13 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stock Inventory App</title>
 
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h1 class="bg-yellow-500 px-5 py-2 font-medium">Hello World</h1>
+  <body class="bg-[#092635] font-jakarta">
+    <main>
+      <div class="max-w-3xl mx-auto bg-[#1B4242] px-5 py-5 text-white mt-10 rounded-lg border border-[#9EC8B9] shadow-lg shadow-white/10 drop-shadow-lg">
+        <div class="flex justify-between items-center">
+          <div class="*:text-3xl *:font-bold">
+            <h2>Stock Inventory</h2>
+          </div>
+          <div
+            class="*:px-3 *:py-1 *:bg-[#092635]/40 *:rounded-md *:border *:border-[#092635] *:text-sm space-x-2"
+          >
+            <button class="hover:bg-[#092635]">Contributions</button>
+            <button class="hover:bg-[#092635]">GitHub</button>
+          </div>
+        </div>
+
+        <form id="stockInventory" class="my-10">
+          <div class="flex flex-col gap-y-5">
+            <div class="flex gap-x-2">
+              <input
+                placeholder="Product ID"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+              <input
+                placeholder="Product Name"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+            </div>
+            <div class="flex gap-x-2">
+              <input
+                placeholder="quantities"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+              <input
+                placeholder="Supervisor's name"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Date of Entry"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Remarks"
+                class="bg-[#9EC8B9] placeholder:text-black/50 placeholder:text-xs w-full rounded-sm outline-none pl-5 text-black text-sm py-1"
+              />
+            </div>
+            <div class="*:bg-[#5C8374]/40 *:border *:border-[#5C8374] *:px-3 *:py-1 *:rounded-md mt-5">
+              <button class="hover:bg-[#5C8374]">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
