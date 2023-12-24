@@ -3,7 +3,6 @@ import JustValidate from "just-validate";
 const inventoryEl = document.getElementById("stockInventory");
 
 const validate = new JustValidate("#stockInventory");
-console.log(validate);
 
 // ! Validate Validate Product ID Field
 validate.addField(
@@ -24,8 +23,12 @@ validate.addField(
       value: 15,
     },
   ],
-  { errorLabelCssClass: ["form-error"] }
+  { errorLabelCssClass: "form-error", tooltip: {
+    position: 'top',
+  } }
 );
+
+// validate.showSuccessLabels({ "#productId": "product ID looks good" });
 
 // ! Validate Validate Product Name Field
 validate.addField(
@@ -97,3 +100,19 @@ validate.addField(
 //   ],
 //   { errorLabelCssClass: ["form-error"] }
 // );
+
+
+// Todo 
+// * [ ] => 
+
+validate.onSuccess((e) => {
+  const formData = new FormData(inventoryEl)
+  // we need these details as an object. 
+  const formValueObj = Object.fromEntries(formData.entries());
+  console.log(formValueObj);
+
+  // Save it on the Local Storage. 
+  const saveItems = localStorage.setItem("Stock Details", JSON.stringify(formValueObj))
+  console.log(saveItems);
+  
+})

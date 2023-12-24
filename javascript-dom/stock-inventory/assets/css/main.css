@@ -19,11 +19,11 @@
 }
 
 .form-error {
-    @apply text-xs mt-2 p-2 bg-red-950 rounded
+  @apply text-xs mt-2 p-2 bg-red-950 rounded;
 }
 
 .form-label {
-    @apply text-xs mt-2 p-2 bg-emerald-600 rounded
+  @apply text-xs;
 }
 
 .navBtn-child {
