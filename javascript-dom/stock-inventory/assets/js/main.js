@@ -23,9 +23,12 @@ validate.addField(
       value: 15,
     },
   ],
-  { errorLabelCssClass: "form-error", tooltip: {
-    position: 'top',
-  } }
+  {
+    errorLabelCssClass: "form-error",
+    tooltip: {
+      position: "top",
+    },
+  }
 );
 
 // validate.showSuccessLabels({ "#productId": "product ID looks good" });
@@ -101,18 +104,27 @@ validate.addField(
 //   { errorLabelCssClass: ["form-error"] }
 // );
 
-
-// Todo 
-// * [ ] => 
+// Todo
+// * [ ] =>
 
 validate.onSuccess((e) => {
-  const formData = new FormData(inventoryEl)
-  // we need these details as an object. 
+  const formData = new FormData(inventoryEl);
+  // we need these details as an object.
   const formValueObj = Object.fromEntries(formData.entries());
-  console.log(formValueObj);
+  // console.log(formValueObj); // We are getting Objects
 
-  // Save it on the Local Storage. 
-  const saveItems = localStorage.setItem("Stock Details", JSON.stringify(formValueObj))
-  console.log(saveItems);
-  
-})
+  const newStockData = [];
+
+  // if any item exists in the local Storage we need to get them.
+  // if it's there then It should be in String Format, but we need to change that into an array.
+  const checkSavedData = localStorage.getItem("Stock Data");
+  const parsedSavedData = JSON.parse(checkSavedData);
+
+  if (parsedSavedData) {
+    parsedSavedData.push(formValueObj);
+    localStorage.setItem("Stock Data", JSON.stringify(parsedSavedData));
+  } else {
+    newStockData.push(formValueObj);
+    localStorage.setItem("Stock Data", JSON.stringify(newStockData));
+  }
+});
