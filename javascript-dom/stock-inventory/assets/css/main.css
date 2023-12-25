@@ -35,7 +35,7 @@
 }
 
 .second-container {
-  @apply max-w-6xl mx-auto bg-[#5C8374] px-5 py-5 text-white mt-10 rounded-lg border border-[#9EC8B9] shadow-lg shadow-white/10 drop-shadow-lg;
+  @apply max-w-5xl mx-auto bg-[#5C8374] px-5 py-5 text-white mt-10 rounded-lg border border-[#9EC8B9] shadow-lg shadow-white/10 drop-shadow-lg;
 }
 
 .tr-elements {
