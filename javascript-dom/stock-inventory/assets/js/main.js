@@ -110,21 +110,25 @@ validate.addField(
 validate.onSuccess((e) => {
   const formData = new FormData(inventoryEl);
   // we need these details as an object.
-  const formValueObj = Object.fromEntries(formData.entries());
-  // console.log(formValueObj); // We are getting Objects
+  const formFinalData = Object.fromEntries(formData.entries());
+  // console.log(formFinalData);
 
-  const newStockData = [];
+  // I need to check whether any localStorage has values.
+  /* 
+    Overwritten the previous value with the new Input values but when we get from
+    getDataFromLocal then it's show the previous value not the current value;
+  */
 
-  // if any item exists in the local Storage we need to get them.
-  // if it's there then It should be in String Format, but we need to change that into an array.
-  const checkSavedData = localStorage.getItem("Stock Data");
-  const parsedSavedData = JSON.parse(checkSavedData);
+  const newStockDetails = [];
 
-  if (parsedSavedData) {
-    parsedSavedData.push(formValueObj);
-    localStorage.setItem("Stock Data", JSON.stringify(parsedSavedData));
+  const getDataFromLocal = localStorage.getItem("stocksData");
+  const finalGetData = JSON.parse(getDataFromLocal);
+
+  if (finalGetData) {
+    finalGetData.push(formFinalData);
+    localStorage.setItem("stocksData", JSON.stringify(finalGetData));
   } else {
-    newStockData.push(formValueObj);
-    localStorage.setItem("Stock Data", JSON.stringify(newStockData));
+    newStockDetails.push(formFinalData);
+    localStorage.setItem("stocksData", JSON.stringify(newStockDetails));
   }
 });
