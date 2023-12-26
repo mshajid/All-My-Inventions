@@ -1,8 +1,8 @@
 import JustValidate from "just-validate";
-
 const inventoryEl = document.getElementById("stockInventory");
-
 const validate = new JustValidate("#stockInventory");
+
+const storageKey = "stockData";
 
 // ! Validate Validate Product ID Field
 validate.addField(
@@ -108,27 +108,34 @@ validate.addField(
 // * [ ] =>
 
 validate.onSuccess((e) => {
-  const formData = new FormData(inventoryEl);
-  // we need these details as an object.
-  const formFinalData = Object.fromEntries(formData.entries());
-  // console.log(formFinalData);
+  const formData = new FormData(inventoryEl); 
+  const formValues = Object.fromEntries(formData.entries())
 
-  // I need to check whether any localStorage has values.
-  /* 
-    Overwritten the previous value with the new Input values but when we get from
-    getDataFromLocal then it's show the previous value not the current value;
-  */
+  const stockDatas = []; 
+  const getFromLocal = localStorage.getItem(storageKey) // Object Object (parse)
+  const parseFromLocal = JSON.parse(getFromLocal) // 1 Array Get Item Yes
 
-  const newStockDetails = [];
-
-  const getDataFromLocal = localStorage.getItem("stocksData");
-  const finalGetData = JSON.parse(getDataFromLocal);
-
-  if (finalGetData) {
-    finalGetData.push(formFinalData);
-    localStorage.setItem("stocksData", JSON.stringify(finalGetData));
+  if(parseFromLocal) {
+    parseFromLocal.push(formValues);
+    localStorage.setItem(storageKey, JSON.stringify(parseFromLocal));
   } else {
-    newStockDetails.push(formFinalData);
-    localStorage.setItem("stocksData", JSON.stringify(newStockDetails));
+    stockDatas.push(formValues);
+    localStorage.setItem(storageKey, JSON.stringify(stockDatas))
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
