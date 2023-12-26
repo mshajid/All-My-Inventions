@@ -1,6 +1,8 @@
 import JustValidate from "just-validate";
 const inventoryEl = document.getElementById("stockInventory");
 const validate = new JustValidate("#stockInventory");
+const stockTable = document.getElementById("stockTable")
+const stockContainer = document.getElementById("stockContainer");
 
 const storageKey = "stockData";
 
@@ -123,6 +125,25 @@ validate.onSuccess((e) => {
     localStorage.setItem(storageKey, JSON.stringify(stockDatas))
   }
 });
+
+// We need to add values to the table data. 
+
+function getAllFormData() {
+  const allStorageKey = localStorage.getItem(storageKey);
+  const storageKeyArray = JSON.parse(allStorageKey)
+
+  if(storageKeyArray) {
+    stockContainer.classList.remove("hidden")
+
+  } else {
+    console.log("Not Available Stocks on The Database")
+  }
+
+
+}
+
+getAllFormData()
+
 
 
 
