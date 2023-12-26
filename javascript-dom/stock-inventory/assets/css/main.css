@@ -19,7 +19,7 @@
 }
 
 .form-error {
-  @apply text-xs mt-2 p-2 bg-red-950 rounded;
+  @apply text-xs mt-2 p-2 bg-red-950 rounded !text-white;
 }
 
 .form-label {
